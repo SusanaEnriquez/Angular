@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InfoService } from './info.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-academy';
+
+  post:any[] = [];
+
+  constructor(private _service:InfoService){ 
+    this.post = _service.getPost();
+  }
 
 }

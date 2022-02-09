@@ -5,14 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { CardsComponent } from './cards/cards.component';
 import { MatCardModule } from '@angular/material/card';
 import { InfoService } from './info.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardsComponent,
   ],
   imports: [
     BrowserModule,
