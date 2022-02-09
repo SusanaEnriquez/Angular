@@ -4,17 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { CardsComponent } from './cards/cards.component';
+import { MatCardModule } from '@angular/material/card';
+import { InfoService } from './info.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonToggleModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [InfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

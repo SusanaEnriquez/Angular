@@ -1,0 +1,27 @@
+.card {
+    width: 50%;
+    height:17rem;
+    color: #fff;
+
+    background-position: 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 20%);
+    transition: all .35s ease-in-out;
+    background-image: url(https://source.unsplash.com/weekly?nature);
+    border-radius: 0;
+}
+
+.mat-card-title{
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 42px;
+    margin-bottom: 20px;
+}
+
+
+/* 
+.action{
+    float: right;
+} */
