@@ -9,8 +9,75 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+  <style>
+    *, :after, :before {
+      box-sizing: border-box;
+    }
+
+    body{
+        margin: 0;
+        font-family: Source Sans Pro,sans-serif;
+        /* font-size: 1.6rem !important; */
+    }
+
+   
+
+    .page-title{
+        padding-top: 35px;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    .page-title .title{
+      line-height: 25px;
+      display: inline-block;
+      position: relative;
+      padding: 6px 16px;
+      font-size: 1rem !important;
+      color: #da3b00;
+      margin-bottom: 20px;
+  }
+
+  .page-title .title:after, .page-title .title:before {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 12px;
+      height: 34px;
+      content: " ";
+      border: 2px solid #da3b00;
+  }
+
+  .page-title .title:before {
+      left: 0;
+      border-right: none;
+  }
+
+  .page-title .title:after {
+      right: 0;
+      border-left: none;
+  }
+  
+  .subtitle{
+        margin: 0;
+        font-size: 58px !important;
+        line-height: 65px !important;
+        font-weight: 700 !important;
+    }
+  </style>
+
 </head>
 <body class="mat-typography">
+
+  <div class="page-title"> 
+    <div  class="title">
+      Making your Life Easier
+    </div>
+    <h2 class="subtitle">Discovering the World</h2>
+  </div>
+
   <app-root></app-root>
 </body>
 </html>

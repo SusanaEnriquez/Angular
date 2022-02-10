@@ -1,0 +1,125 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Source Sans Pro,sans-serif;
+    /* font-size: 1.6rem; */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a:-webkit-any-link{
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card {
+    width: 50%;
+
+    /* overflow: hidden; */
+    position: relative;
+    height: 360px;
+
+    background-position: 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 20%);
+    transition: all .35s ease-in-out;
+    background-image: url(https://source.unsplash.com/random);
+    border-radius: 0;
+}
+
+.content{
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+    width: 100%;
+    color: #fff;
+}
+
+.filters{
+    text-align: center;
+    margin: 10px 0 20px;
+    position: relative;
+    border-radius: 25%;
+}
+
+.filters-button{
+    min-width: 90px;
+    font-size: 1rem;
+}
+
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
+
+.card-title{
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 42px;
+    margin-bottom: 20px;
+    padding-top: 5.5rem;
+}
+
+.card-subtitle{
+    font-style: italic;
+    font-size: 1.6rem;
+    padding-bottom: 10px;
+    color: #fff;
+    padding-right: 10px;
+}
+
+h3{
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 42px;
+    margin-bottom: 20px;
+}
+
+
+h3:before {
+    transition: all .5s;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    height: 8px;
+    width: 0;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+}
+
+.description{
+    font-size: 16px;
+    line-height: 22px;
+    width: 75%;
+    padding-bottom: 20px;
+}
+
+.category{
+    font-family: Roboto,Helvetica Neue,sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.actions{
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    color: #fff;
+    /* visibility: hidden; */
+    opacity: 0;
+}
