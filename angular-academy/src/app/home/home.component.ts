@@ -11,10 +11,15 @@ export class HomeComponent implements OnInit {
   post:any[] = [];
 
   constructor(private _service:InfoService){ 
-    this.post = _service.getPost();
+    this.post = _service.getPost()
   }
 
   ngOnInit(): void {
   }
 
 }
+
+function subscribe(arg0: (res: any) => void) {
+  throw new Error('Function not implemented.');
+}
+

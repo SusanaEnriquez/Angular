@@ -11,8 +11,8 @@
 <body>
   <div class="filters">
     <div style="overflow:scroll;">
-      <mat-button-toggle-group role="group" name="category" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard" aria-disabled="false" #toggleGroup="matButtonToggleGroup">
-        <mat-button-toggle class="filters-button" value="All">All</mat-button-toggle>
+      <mat-button-toggle-group role="group" name="category" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard" aria-disabled="false" #toggleGroup="matButtonToggleGroup" value = 'All'>
+        <mat-button-toggle class="filters-button" value="All" >All</mat-button-toggle>
         <mat-button-toggle class="filters-button" value="Travel">Travel</mat-button-toggle>
         <mat-button-toggle class="filters-button" value="Lifestyle">Lifestyle</mat-button-toggle>
         <mat-button-toggle class="filters-button" value="Business">Business</mat-button-toggle>
@@ -31,26 +31,26 @@
   </div>
 
 
-  <div style="display: flex; width: 100%; flex-wrap: wrap;" >
-
-    <mat-card *ngFor="let element of post, index as i" class="card" style="background-image: url({{element.bg}});">
-      <div class="content">
-      <a href="" [routerLink]="['/detail', i]">
-      <mat-card-title class="card-title">{{element.title}}</mat-card-title>
-      <mat-card-subtitle class="card-subtitle">{{element.comments}} comments</mat-card-subtitle>
-
-      <mat-card-content>
-        <p class="description" style="height: 4rem; overflow: hidden; text-overflow: ellipsis;">{{element.description}}</p>
-        <p class="category">{{element.category}}</p>
-      </mat-card-content>
-      
-      <mat-card-actions class="actions">
-        <button mat-button><mat-icon>edit</mat-icon></button>
-        <button mat-button><mat-icon>dekete</mat-icon></button>
-      </mat-card-actions>
+  <div style="display: flex; width: 100%; flex-wrap: wrap;" *ngFor="let element of post, index as i">
     
-    </a>
-    </div>
+    <mat-card  class="card" *ngIf="element.category == toggleGroup.value || toggleGroup.value == 'All'" style="background-image: url({{element.bg}});">
+        <div class="content">
+        <a href="" [routerLink]="['/detail', i]">
+        <mat-card-title class="card-title">{{element.title}}</mat-card-title>
+        <mat-card-subtitle class="card-subtitle">{{element.comments}} comments</mat-card-subtitle>
+
+        <mat-card-content>
+          <p class="description" style="height: 4rem; overflow: hidden; text-overflow: ellipsis;">{{element.description}}</p>
+          <p class="category">{{element.category}}</p>
+        </mat-card-content>
+        
+        <mat-card-actions class="actions">
+          <button mat-button><mat-icon>edit</mat-icon></button>
+          <button mat-button><mat-icon>dekete</mat-icon></button>
+        </mat-card-actions>
+      
+        </a>
+        </div>
     </mat-card>
 
   </div>
