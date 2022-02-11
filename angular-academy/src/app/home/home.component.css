@@ -57,6 +57,10 @@ a:-webkit-any-link{
     display: flex;
     justify-content: center;
     width: 120px;
+    position: fixed;
+    top: 145px;
+    right: 20px;
+    z-index: 1;
 }
 
 .card-title{
