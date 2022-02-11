@@ -11,16 +11,15 @@
 <body>
   <div class="filters">
     <div style="overflow:scroll;">
-      <!-- <mat-button-toggle-group [(ngModel)]="fontStyle" aria-label="Font Style"> ---------- -->
-      <mat-button-toggle-group role="group" name="category" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard" aria-disabled="false">
-        <mat-button-toggle class="filters-button">All</mat-button-toggle>
-        <mat-button-toggle class="filters-button">Travel</mat-button-toggle>
-        <mat-button-toggle class="filters-button">Lifestyle</mat-button-toggle>
-        <mat-button-toggle class="filters-button">Business</mat-button-toggle>
-        <mat-button-toggle class="filters-button">Vacation</mat-button-toggle>
-        <mat-button-toggle class="filters-button">Other</mat-button-toggle>
+      <mat-button-toggle-group role="group" name="category" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard" aria-disabled="false" #toggleGroup="matButtonToggleGroup">
+        <mat-button-toggle class="filters-button" value="All">All</mat-button-toggle>
+        <mat-button-toggle class="filters-button" value="Travel">Travel</mat-button-toggle>
+        <mat-button-toggle class="filters-button" value="Lifestyle">Lifestyle</mat-button-toggle>
+        <mat-button-toggle class="filters-button" value="Business">Business</mat-button-toggle>
+        <mat-button-toggle class="filters-button" value="Vacation">Vacation</mat-button-toggle>
+        <mat-button-toggle class="filters-button" value="Other">Other</mat-button-toggle>
       </mat-button-toggle-group>
-      <!-- <p>Chosen value is {{fontStyle}}</p> ------- -->
+      <!-- {{toggleGroup.value}} -->
     </div>
   </div>
 
@@ -32,9 +31,9 @@
   </div>
 
 
-  <div style="display: flex; width: 100%; flex-wrap: wrap;">
+  <div style="display: flex; width: 100%; flex-wrap: wrap;" >
 
-    <mat-card *ngFor="let element of post, index as i" class="card">
+    <mat-card *ngFor="let element of post, index as i" class="card" style="background-image: url({{element.bg}});">
       <div class="content">
       <a href="" [routerLink]="['/detail', i]">
       <mat-card-title class="card-title">{{element.title}}</mat-card-title>
