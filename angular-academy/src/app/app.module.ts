@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import {MatInputModule} from '@angular/material/input';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HomeComponent } from './home/home.component';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
   ],
   providers: [InfoService],
   bootstrap: [AppComponent]

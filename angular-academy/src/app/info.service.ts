@@ -9,10 +9,7 @@ export class InfoService {
     { 
       title: 'The waves are high & beautiful',
       comments: [
-        {
-          author: 'Susana Enriquez',
-          comment: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non sce'
-        },
+          'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non sce',
       ],
       description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non scelerisque, quisque netus nascetur semper platea leo sem tempus est lectus fermentum accumsan, dictumst venenatis consequat nam at vel arcu urna mi viverra. Arcu litora non sapien dis sollicitudin duis euismod, augue pulvinar metus est tortor nisi. Tempor taciti platea vulputate at integer tempus a placerat potenti arcu quisque, dignissim penatibus parturient hendrerit varius rhoncus suscipit tortor mus eleifend erat, felis dis nibh ridiculus vitae euismod feugiat ullamcorper blandit duis.',
       category: 'Travel',
@@ -22,14 +19,8 @@ export class InfoService {
     {
       title: 'At the beach in winter',
       comments: [
-        {
-          author: 'Susy Enriquez',
-          comment: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non sce'
-        },
-        {
-          author: 'Enriquez Susana',
-          comment: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non sce'
-        },
+          'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non sce',
+          'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non sce',
       ],
       description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non scelerisque, quisque netus nascetur semper platea leo sem tempus est lectus fermentum accumsan, dictumst venenatis consequat nam at vel arcu urna mi viverra. Arcu litora non sapien dis sollicitudin duis euismod, augue pulvinar metus est tortor nisi. Tempor taciti platea vulputate at integer tempus a placerat potenti arcu quisque, dignissim penatibus parturient hendrerit varius rhoncus suscipit tortor mus eleifend erat, felis dis nibh ridiculus vitae euismod feugiat ullamcorper blandit duis.',
       category: 'Lifestyle',
@@ -50,7 +41,7 @@ export class InfoService {
       bg: "https://source.unsplash.com/collection/540518/likes/"
     },
   ];
-  
+    
 
   constructor() {  console.log("funciona el servicio :)"); }
 
@@ -62,13 +53,12 @@ export class InfoService {
     return this.post[i];
   }
 
-  // getNumComm(){
-  //   const comentarios = (this.post.comments.length)+1
-  //   return comentarios
-  // }
-
   addPost(_info: any[]) {
-    this.post.push
+    this.post.push(_info)
+  }
+
+  addComm(comment: string, i: number){
+    this.post[i].comments.push(comment);       
   }
 
   // deletePost(name: string) {
