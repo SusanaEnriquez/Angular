@@ -8,7 +8,12 @@ export class InfoService {
   post: any[] = [
     { 
       title: 'The waves are high & beautiful',
-      comments: [],
+      comments: [
+        {
+          author: 'Susana Enriquez',
+          comment: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non sce'
+        },
+      ],
       description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non scelerisque, quisque netus nascetur semper platea leo sem tempus est lectus fermentum accumsan, dictumst venenatis consequat nam at vel arcu urna mi viverra. Arcu litora non sapien dis sollicitudin duis euismod, augue pulvinar metus est tortor nisi. Tempor taciti platea vulputate at integer tempus a placerat potenti arcu quisque, dignissim penatibus parturient hendrerit varius rhoncus suscipit tortor mus eleifend erat, felis dis nibh ridiculus vitae euismod feugiat ullamcorper blandit duis.',
       category: 'Travel',
       bg: "https://source.unsplash.com/weekly?nature"
@@ -16,7 +21,16 @@ export class InfoService {
     },
     {
       title: 'At the beach in winter',
-      comments: [],
+      comments: [
+        {
+          author: 'Susy Enriquez',
+          comment: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non sce'
+        },
+        {
+          author: 'Enriquez Susana',
+          comment: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non sce'
+        },
+      ],
       description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit litora diam non scelerisque, quisque netus nascetur semper platea leo sem tempus est lectus fermentum accumsan, dictumst venenatis consequat nam at vel arcu urna mi viverra. Arcu litora non sapien dis sollicitudin duis euismod, augue pulvinar metus est tortor nisi. Tempor taciti platea vulputate at integer tempus a placerat potenti arcu quisque, dignissim penatibus parturient hendrerit varius rhoncus suscipit tortor mus eleifend erat, felis dis nibh ridiculus vitae euismod feugiat ullamcorper blandit duis.',
       category: 'Lifestyle',
       bg: "https://source.unsplash.com/weekly?beach"

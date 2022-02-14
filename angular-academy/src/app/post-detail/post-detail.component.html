@@ -7,10 +7,40 @@
     <title>Document</title>
 </head>
 <body>
-    <div *ngFor="let p of post">
-        <img src="{{p.bg}}" alt="">
-        <h3>{{p.title}}</h3>
+    <div *ngFor="let p of post" style="background-color: hsla(0,0%,50%,.1);">
+
+        <div class="imagebg" style="background-image: url({{p.bg}}); min-height: 540px; width: 100%; padding: 40px; background-repeat: no-repeat; background-position: 50%; background-size: cover; box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 40%); justify-content: center; color: #fff; position: relative;">
+            <button mat-stroked-button [routerLink]="['/']" class="back"><mat-icon>keyboard_arrow_left</mat-icon>View Posts</button>
+            <h2>{{p.title}}</h2>
+        </div>
+
+        <div class="description">
+            {{p.description}}
+        </div>
+
+        <div style="width: 50%; margin: auto; padding-top: 30px;">
+            <h3 style="font-weight: bold; font-size: 23px;">Comments</h3>
+            
+            <div *ngFor="let comment of p.comments" class="comm">            
+                <div style="height: 100%;">
+                    <mat-icon style="font-size: 40px; width: 40px;">account_circle</mat-icon>
+                </div>
+                <div>
+                    <div style="width: 80%; margin-left: 10px;">
+                        <h3 class="author">{{comment.author}}</h3>  
+                        <p style="font-size: 20px;">{{comment.comment}}</p>
+                    </div>
+                </div>
+            </div> 
+
+            <form style="width: 100%;">
+                <mat-form-field style="width: 100%;">
+                  <mat-label>Write a comment</mat-label>
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </form>
+        </div>
+
     </div>
-    
 </body>
 </html>

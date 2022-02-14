@@ -10,6 +10,7 @@ import { InfoService } from './info.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import {MatInputModule} from '@angular/material/input';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
     MatButtonToggleModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule
   ],
   providers: [InfoService],
   bootstrap: [AppComponent]

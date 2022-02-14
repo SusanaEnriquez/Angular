@@ -25,7 +25,7 @@
 
 
   <div class="example-button-container">
-    <button mat-fab color="warn" aria-label="Example icon button with a home icon" style="background-color: #da3b00;">
+    <button mat-fab  aria-label="Example icon button with a home icon" style="background-color: #da3b00;">
       <mat-icon>edit</mat-icon>
     </button>
   </div>
@@ -37,7 +37,7 @@
         <div class="content">
         <a href="" [routerLink]="['/detail', i]">
         <mat-card-title class="card-title">{{element.title}}</mat-card-title>
-        <mat-card-subtitle class="card-subtitle">{{element.comments}} comments</mat-card-subtitle>
+        <mat-card-subtitle class="card-subtitle">{{element.comments.length}} comments</mat-card-subtitle>
 
         <mat-card-content>
           <p class="description" style="height: 4rem; overflow: hidden; text-overflow: ellipsis;">{{element.description}}</p>
