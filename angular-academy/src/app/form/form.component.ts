@@ -19,8 +19,12 @@ export class FormComponent implements OnInit {
     { id:5, value: 'Other'},
   ]
   // ELIMINAR SI NO SE USA
-  
+
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    console.log(this._service.form.value)
+    this._service.addPost(this._service.form.value);
+  }
 }

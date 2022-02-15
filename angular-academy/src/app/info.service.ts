@@ -50,8 +50,9 @@ export class InfoService {
 
   //Agregue para el forms
   form: FormGroup = new FormGroup({
-    $key: new FormControl(null),
+    // $key: new FormControl(null),
     title: new FormControl(""),
+    comments: new FormControl([]),
     description: new FormControl(""),
     category: new FormControl(""),
     bg: new FormControl("")

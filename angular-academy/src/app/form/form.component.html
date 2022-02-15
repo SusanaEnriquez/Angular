@@ -1,6 +1,6 @@
 <form [formGroup]="_service.form" class="normal-form">
     <div class="controles-container">
-        <input type="hidden" formControlName="$key">
+        <!-- <input type="hidden" formControlName="$key"> -->
 
     <mat-form-field>
         <mat-label>Title</mat-label>
@@ -41,7 +41,7 @@
 
       <div class="button-row">
         <button mat-button>Cancel</button>
-        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Save</button>
       </div>
     </div>
 </form>
