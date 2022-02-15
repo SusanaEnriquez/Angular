@@ -1,0 +1,42 @@
+<form [formGroup]="_service.form" class="normal-form">
+    <div class="controles-container">
+        <input type="hidden" formControlName="$key">
+
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option value="Travel">Travel</mat-option>
+          <mat-option value="Lifestyle">Lifestyle</mat-option>
+          <mat-option value="Business">Business</mat-option>
+          <mat-option value="Vacation">Vacation</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option></mat-option>
+          <ng-container *ngFor="let c of cate">
+              <mat-option value="{{c.id}}">{{c.value}}</mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field> -->
+
+      <mat-form-field>
+        <mat-label>URL of the image</mat-label>
+        <input type="url" matInput formControlName="bg">
+        <mat-icon matSuffix>link</mat-icon>
+      </mat-form-field>
+    </div>
+</form>

@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+//Agregue para el forms
+import { FormGroup, FormControl } from '@angular/forms';
+//Agregue para el forms
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +48,17 @@ export class InfoService {
 
   constructor() {  console.log("funciona el servicio :)"); }
 
+  //Agregue para el forms
+  form: FormGroup = new FormGroup({
+    $key: new FormControl(null),
+    title: new FormControl(""),
+    description: new FormControl(""),
+    category: new FormControl(""),
+    bg: new FormControl("")
+  });
+  //Agregue para el forms
+
+  
   getPost() {
     return this.post;
   }
@@ -61,15 +75,11 @@ export class InfoService {
     this.post[i].comments.push(comment);       
   }
 
-  // deletePost(name: string) {
-  //   if (this.post.name == name)
-  //     this.post[i]
-  // }
+  deletePost(i: any) {
+    this.post[i].splice();     
+  }
 
-  // editPost() {
-    
-  // }
+  editPost(changes: any[], i: any) {
+    changes=this.post[i]
+  }
 }
-
-
-// https://www.youtube.com/watch?v=2hdQ3KE7_As
