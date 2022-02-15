@@ -11,3 +11,8 @@ form.normal-form{
     width: 100%;
     
 }
+
+.button-row button{
+    margin: 5px;
+    min-width: 100px;
+}
