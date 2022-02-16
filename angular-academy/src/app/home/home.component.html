@@ -30,28 +30,30 @@
     </button>
   </div>
 
-
-  <div style="display: flex; width: 100%; flex-wrap: wrap;" *ngFor="let element of post, index as i">
-    
-    <mat-card  class="card" *ngIf="element.category == toggleGroup.value || toggleGroup.value == 'All'" style="background-image: url({{element.bg}});">
-        <div class="content">
+  <div style="display: flex; width: 100%; flex-wrap: wrap;">
+    <div *ngFor="let element of post, index as i" style="width: 50%;">
+      <div >
+    <mat-card class="card" *ngIf="element.category == toggleGroup.value || toggleGroup.value == 'All'" style="background-image: url({{element.bg}});">
+        
+      <div class="content">
         <a href="" [routerLink]="['/detail', i]">
-        <mat-card-title class="card-title">{{element.title}}</mat-card-title>
-        <mat-card-subtitle class="card-subtitle">{{element.comments.length}} Comments <mat-icon style="font-size: 15px;">forum</mat-icon></mat-card-subtitle>
+          <mat-card-title class="card-title">{{element.title}}</mat-card-title>
+          <mat-card-subtitle class="card-subtitle">{{element.comments.length}} Comments <mat-icon style="font-size: 15px;">forum</mat-icon></mat-card-subtitle>
 
-        <mat-card-content>
-          <p class="description" style="height: 4rem; overflow: hidden; text-overflow: ellipsis;">{{element.description}}</p>
-          <p class="category">{{element.category}}</p>
-        </mat-card-content>
+          <mat-card-content>
+            <p class="description" style="height: 4rem; overflow: hidden; text-overflow: ellipsis;">{{element.description}}</p>
+            <p class="category">{{element.category}}</p>
+          </mat-card-content>
         </a>
         <mat-card-actions class="actions">
           <button mat-icon-button (click)="onEdit(element, i)"><mat-icon>edit</mat-icon></button>
           <button mat-icon-button style="margin-right: 8px;" (click)="onDelete(i)"><mat-icon>delete</mat-icon></button>
         </mat-card-actions>
-      
-        </div>
-    </mat-card>
+      </div>
 
+    </mat-card>
+    </div>
   </div>
+</div>
 </body>
 </html>

@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   onCreate(){
+    this._service.initializeFormGroup();
     const dConfig = new MatDialogConfig();
     dConfig.disableClose = true;
     dConfig.autoFocus = true;
@@ -30,11 +31,14 @@ export class HomeComponent implements OnInit {
   }
 
   onEdit(_info: any[], id: number){
+    this._service.popForm(_info);
     const dConfig = new MatDialogConfig();
     dConfig.disableClose = true;
     dConfig.width = "550px";
     dConfig.maxWidth = "80vw";
-    this.dialog.open(EditComponent, dConfig);    
+    dConfig.data = id;
+    this.dialog.open(EditComponent, dConfig);  
+    
   }
 
   onDelete(id: number){

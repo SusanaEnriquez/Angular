@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { InfoService } from '../info.service';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { inject } from '@angular/core/testing';
 
 @Component({
   selector: 'app-edit',
@@ -8,16 +10,16 @@ import { InfoService } from '../info.service';
 })
 export class EditComponent implements OnInit {
 
-  constructor(public _service: InfoService) { }
-  data: any[] = [];
+  constructor(public _service: InfoService, @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  i: any;
 
   ngOnInit(): void {
+    console.log(this.data)
   }
 
   onSubmit(){
-    // this._service.editPost(_info, id);
-    // this._service.form.reset();
-    // this._service.initializeFormGroup();
+    console.log(this.data)
+    this._service.editPost(this._service.form.value, this.data);
   }
-
 }

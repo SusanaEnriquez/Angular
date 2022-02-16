@@ -1,12 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 //Agregue para el forms
 import { FormGroup, FormControl } from '@angular/forms';
+
 //Agregue para el forms
 
 @Injectable({
   providedIn: 'root'
 })
 export class InfoService {
+  @Output() getId: EventEmitter<any> = new EventEmitter();
 
   post: any[] = [
     { 
@@ -91,7 +93,11 @@ export class InfoService {
     delete this.post[i];
   }
 
-  editPost(changes: any[], i: any) {
-    changes=this.post[i]
+  editPost(changes: any[], i: any){    
+    this.post[i]=changes
+  }
+
+  popForm(infoPost: any[]){
+    this.form.setValue(infoPost);
   }
 }
