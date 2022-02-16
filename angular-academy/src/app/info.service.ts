@@ -55,8 +55,18 @@ export class InfoService {
     comments: new FormControl([]),
     description: new FormControl(""),
     category: new FormControl(""),
-    bg: new FormControl("")
+    bg: new FormControl("https://source.unsplash.com/random")
   });
+
+  initializeFormGroup(){
+    this.form.setValue({
+      title: "",
+      comments: [],
+      description: "",
+      category: "",
+      bg: "https://source.unsplash.com/random"
+    });
+  }
   //Agregue para el forms
 
   
@@ -69,7 +79,8 @@ export class InfoService {
   }
 
   addPost(_info: any[]) {
-    this.post.push(_info)
+    // this.post.push(_info)
+    this.post.unshift(_info);
   }
 
   addComm(comment: string, i: number){
@@ -77,7 +88,7 @@ export class InfoService {
   }
 
   deletePost(i: any) {
-    this.post[i].splice();     
+    delete this.post[i];
   }
 
   editPost(changes: any[], i: any) {

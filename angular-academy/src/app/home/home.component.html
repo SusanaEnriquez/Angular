@@ -25,7 +25,7 @@
 
 
   <div class="example-button-container">
-    <button mat-fab  aria-label="Example icon button with a home icon" style="background-color: #da3b00;">
+    <button mat-fab  aria-label="Example icon button with a home icon" style="background-color: #da3b00;" (click)="onCreate()">
       <mat-icon>edit</mat-icon>
     </button>
   </div>
@@ -37,26 +37,21 @@
         <div class="content">
         <a href="" [routerLink]="['/detail', i]">
         <mat-card-title class="card-title">{{element.title}}</mat-card-title>
-        <mat-card-subtitle class="card-subtitle">{{element.comments.length}} comments</mat-card-subtitle>
+        <mat-card-subtitle class="card-subtitle">{{element.comments.length}} Comments <mat-icon style="font-size: 15px;">forum</mat-icon></mat-card-subtitle>
 
         <mat-card-content>
           <p class="description" style="height: 4rem; overflow: hidden; text-overflow: ellipsis;">{{element.description}}</p>
           <p class="category">{{element.category}}</p>
         </mat-card-content>
-        
+        </a>
         <mat-card-actions class="actions">
-          <button mat-button><mat-icon>edit</mat-icon></button>
-          <button mat-button><mat-icon>dekete</mat-icon></button>
+          <button mat-icon-button (click)="onEdit(element, i)"><mat-icon>edit</mat-icon></button>
+          <button mat-icon-button style="margin-right: 8px;" (click)="onDelete(i)"><mat-icon>delete</mat-icon></button>
         </mat-card-actions>
       
-        </a>
         </div>
     </mat-card>
 
   </div>
-
-  <!-- BORRAR ESTOO -->
-  <app-form></app-form>
-  <!-- BORRAR ESTOO -->
 </body>
 </html>

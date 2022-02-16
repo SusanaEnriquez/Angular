@@ -13,17 +13,20 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { MatInputModule } from '@angular/material/input';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
-import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostDetailComponent,
     HomeComponent,
-    FormComponent,
+    CreateComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,8 +41,10 @@ import { MatSelectModule } from '@angular/material/select';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatDialogModule,
   ],
   providers: [InfoService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CreateComponent, EditComponent]
 })
 export class AppModule { }
