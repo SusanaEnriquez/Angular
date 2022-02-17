@@ -42,15 +42,21 @@ export class HomeComponent implements OnInit {
     
   }
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {
+  // openSnackBar(message: string, action: string) {
+  //   this._snackBar.open(message, action, {
+  //     duration: 3000
+  //   });
+  // }
+
+  openSnackBar() {
+    this._snackBar.open('Deleted Post', '', {
       duration: 3000
     });
   }
 
   onDelete(id: number){
     this._service.deletePost(id);
-      this.openSnackBar('Deleted Post', 'Undo');
+      this.openSnackBar();
   }
 }
 
