@@ -3,6 +3,7 @@ import { InfoService } from '../info.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CreateComponent } from '../create/create.component';
 import { EditComponent } from '../edit/edit.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   filter: string = "All";
   post:any[] = [];
 
-  constructor(private _service:InfoService, public dialog: MatDialog){ 
+  constructor(private _service:InfoService, public dialog: MatDialog, private _snackBar: MatSnackBar){ 
     this.post = _service.getPost()
   }
 
@@ -41,8 +42,15 @@ export class HomeComponent implements OnInit {
     
   }
 
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 3000
+    });
+  }
+
   onDelete(id: number){
     this._service.deletePost(id);
+      this.openSnackBar('Deleted Post', 'Undo');
   }
 }
 

@@ -89,8 +89,10 @@ export class InfoService {
   }
 
   deletePost(i: any) {
-    delete this.post[i];
-    // this.post.splice(i,1)
+    // delete this.post[i];
+    var removed  = this.post.splice(i,1)
+    return removed
+
   }
 
   editPost(changes: any[], i: any){    

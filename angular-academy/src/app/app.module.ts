@@ -20,6 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { FilterPipe } from './filter.pipe';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { FilterPipe } from './filter.pipe';
     MatFormFieldModule,
     MatSelectModule,
     MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [InfoService],
   bootstrap: [AppComponent],

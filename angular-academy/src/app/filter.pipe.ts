@@ -11,7 +11,7 @@ export class FilterPipe implements PipeTransform {
       return items;
   } else
   
-  // aqui asumó que tu interfaz de producto tiene una propiedad llamada category por la cual vamos a filtrar
+  // aqui vamos a filtrar
   return items.filter(({ category }) => category === filter);
     
 }
