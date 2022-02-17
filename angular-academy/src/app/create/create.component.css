@@ -4,7 +4,7 @@ form.normal-form{
 
 .controles-container{
     width: 100%;
-    padding: 5%;
+    padding: 5% 5% 0 5%;
 }
 
 .controles-container > * {

@@ -8,7 +8,6 @@ import { FormGroup, FormControl } from '@angular/forms';
   providedIn: 'root'
 })
 export class InfoService {
-  @Output() getId: EventEmitter<any> = new EventEmitter();
 
   post: any[] = [
     { 
@@ -91,6 +90,7 @@ export class InfoService {
 
   deletePost(i: any) {
     delete this.post[i];
+    // this.post.splice(i,1)
   }
 
   editPost(changes: any[], i: any){    

@@ -22,16 +22,11 @@ a:-webkit-any-link{
 .card {
     position: relative !important;
     height: 360px;
-
+    width: 100%;
     background-position: 50% !important;
     background-size: cover !important;
     box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 20%) !important;
     border-radius: 0;
-}
-
-.card:hover{
-    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 40%) !important;
-    transition: all .35s ease-in-out !important;
 }
 
 .content{
@@ -57,10 +52,9 @@ a:-webkit-any-link{
 .example-button-container {
     display: flex;
     justify-content: center;
-    width: 120px;
     position: fixed;
-    top: 145px;
-    right: 20px;
+    top: 9rem;
+    right: 15px;
     z-index: 1;
 }
 
@@ -78,7 +72,7 @@ a:-webkit-any-link{
     font-style: italic;
     font-size: 15px;
     color: #fff;
-    padding-right: 10px;
+    padding: 15px 10px 0 0;
     margin-bottom: 0;
 }
 
@@ -120,9 +114,18 @@ a:-webkit-any-link{
     margin: 0;
     padding: 0;
     visibility: hidden;
-    /* opacity: 0; */
+}
+
+.card:hover{
+    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 40%) !important;
+    transition: all .35s ease-in-out !important;
 }
 
 .card:hover button {
     visibility: visible;
   }
+
+.card:hover .card-title::before{
+    width: 110px;
+    transition: all .5s;
+}
