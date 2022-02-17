@@ -11,7 +11,7 @@
 <body>
   <div class="filters">
     <div style="overflow:scroll;">
-      <mat-button-toggle-group role="group" name="category" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard" aria-disabled="false" #toggleGroup="matButtonToggleGroup" value = 'All'>
+      <mat-button-toggle-group role="group" name="category" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard" aria-disabled="false" #toggleGroup="matButtonToggleGroup" value = 'All' [(ngModel)]="filter" name="filter">
         <mat-button-toggle class="filters-button" value="All" >All</mat-button-toggle>
         <mat-button-toggle class="filters-button" value="Travel">Travel</mat-button-toggle>
         <mat-button-toggle class="filters-button" value="Lifestyle">Lifestyle</mat-button-toggle>
@@ -31,9 +31,8 @@
   <!-- </div> -->
 
   <div style="display: flex; width: 100%; flex-wrap: wrap;">
-    <div *ngFor="let element of post, index as i" style="width: 100%;">
-        
-        <mat-card *ngIf="toggleGroup.value == element.category || toggleGroup.value == 'All'" class="card" style="background-image: url({{element.bg}});">
+    <div *ngFor="let element of post | filter:filter, index as i" style="width: 50%;">
+        <mat-card  class="card" style="background-image: url({{element.bg}});">
             
           <div class="content">
             <a href="" [routerLink]="['/detail', i]"> 

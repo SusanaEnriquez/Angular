@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EditComponent } from './edit/edit.component';
     HomeComponent,
     CreateComponent,
     EditComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

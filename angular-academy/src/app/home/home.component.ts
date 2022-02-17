@@ -10,7 +10,7 @@ import { EditComponent } from '../edit/edit.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  filter: string = "All";
   post:any[] = [];
 
   constructor(private _service:InfoService, public dialog: MatDialog){ 
