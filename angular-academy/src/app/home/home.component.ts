@@ -13,6 +13,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class HomeComponent implements OnInit {
   filter: string = "All";
   post:any[] = [];
+  undo: any[] = [];
 
   constructor(private _service:InfoService, public dialog: MatDialog, private _snackBar: MatSnackBar){ 
     this.post = _service.getPost()
@@ -54,7 +55,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onDelete(id: number){
+ onDelete(id: number){
     this._service.deletePost(id);
       this.openSnackBar();
   }
