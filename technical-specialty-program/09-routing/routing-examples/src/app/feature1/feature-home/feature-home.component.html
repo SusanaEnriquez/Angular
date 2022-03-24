@@ -1,0 +1,16 @@
+<div style="text-align:left">
+  <h1>FEATURE HOME</h1>
+  <mat-list>
+    <mat-list-item *ngFor="let route of testRoutes">
+      <mat-icon matListIcon>label</mat-icon>
+      <h3 matLine>{{ route.name }}</h3>
+      <p [routerLink]="['../dynamic-route-test', route.id]" matLine>
+        <span> {{ route.name }} </span>
+        <span class="demo-2"> -- Click for route and data details</span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>

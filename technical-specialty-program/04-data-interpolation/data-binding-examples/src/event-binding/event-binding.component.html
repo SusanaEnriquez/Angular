@@ -1,0 +1,27 @@
+<mat-card>
+  <div style="text-align:left">
+    <h2>Event Bind</h2>
+    <div class="row">
+      <button [disabled]="iWasClicked" (click)="clickMethod('clicked')">Click Me</button>
+      <br />
+      <h4>{{ iWasClickedText }}</h4>
+    </div>
+    <hr>
+    <div class="row">
+      <form #importantForm (ngSubmit)="onSave(importantForm, $event)">
+        <label for="name">School Name</label>
+        <input type="text" class="form-control" #name required (keyup)="validateNoSpace(name, $event)" />
+        <small *ngIf="noSpaceValidation">no spaces allowed</small>
+        <br />
+        <label for="grade">Final Grade</label>
+        <input type="number" class="form-control" #grade required  maxlength="2" (change)="gradeCannotHaveZero(grade, $event)" />
+        <small *ngIf="noZeroValidation">no zero allowed</small>
+        <br />
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button (click)="onCancel(importantForm, $event)">Cancel</button>
+      </form>
+    </div>
+    <hr>
+    <app-counter (countChange)="counter = $event">counter</app-counter>
+  </div>
+</mat-card>

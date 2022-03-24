@@ -1,0 +1,49 @@
+<mat-card>
+  <div style="text-align:left">
+    <h2>Two Way Bind</h2>
+    <hr />
+    <h4>Two Way Binding comparison</h4>
+    <app-counter [(count)]="number1">Number 1:</app-counter>
+    <app-counter [count]="number2" (countChange)="number2 = $event">Number 2:</app-counter>
+    <app-counter [count]="number3" (countChange)="onCountChanged($event)">Number 3:</app-counter>
+
+    <hr />
+    <h4>NgModel for Form Inputs</h4>
+    <form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
+      <input type="text" placeholder="User name" required maxlength="25" [(ngModel)]="userName" name="userName" #pickedName="ngModel" />
+      <div *ngIf="!pickedName.valid && pickedName.touched">
+        User name is required!
+      </div>
+      <br />
+      <input type="email" placeholder="Email" required [(ngModel)]="email" name="email" #userEmail="ngModel" />
+      <div *ngIf="!userEmail.valid && userEmail.touched">
+        Email is required!
+      </div>
+      <br />
+      <input type="text" placeholder="Nick name" [(ngModel)]="nickName" name="nickName" />
+      <br />
+      <input type="password" placeholder="Password" required [(ngModel)]="password" name="password" #userPassword="ngModel" />
+      <div *ngIf="!userPassword.valid && userPassword.touched">
+        Password is required!
+      </div>
+      <br />
+      <button type="submit" [disabled]="!newUserForm.form.valid">
+        Register
+      </button>
+      <button type="button" (click)="newUserForm.reset()">
+        Reset
+      </button>
+    </form>
+    <h4>Form Data:</h4>
+    <!-- Values of the two way data binded variables -->
+    <pre>User Name: {{ userName }}</pre>
+    <pre>Email: {{ email }}</pre>
+    <pre>Nick Name: {{ nickName }}</pre>
+    <pre>Password: {{ password }}</pre>
+
+    <!-- Value of whole form -->
+    <pre>{{ newUserForm.form.value | json }}</pre>
+    <!-- Validity of whole form -->
+    <pre>Valid form? {{ newUserForm.form.valid | json }}</pre>
+  </div>
+</mat-card>

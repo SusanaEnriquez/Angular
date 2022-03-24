@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <button class="btn btn-primary" (click)="getPeople()">People</button>
+      <button class="btn btn-primary" (click)="getSpecies()">Species</button>
+      <button class="btn btn-primary" (click)="getStarships()">
+        Starships
+      </button>
+      <button class="btn btn-primary" (click)="getMockPeople()">
+        Mock People
+      </button>
+
+      <button class="btn btn-primary" (click)="onPost('Acn')">Post</button>
+      <hr />
+      <ul
+        class="list-group"
+        *ngFor="let people of data$ | async; let i = index"
+      >
+        <li class="list-group-item" (click)="getPeopleById(i)">
+          {{ people.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

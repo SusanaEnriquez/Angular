@@ -1,0 +1,89 @@
+<mat-card>
+  <div style="text-align:left">
+    <h2>String Interpolation</h2>
+    <!-- SIMPLE STRING -->
+    <hr />
+    <div class="row">
+      <h4>Simple String Interpolation Example:</h4>
+      <p>{{ name }}</p>
+    </div>
+    <hr />
+
+    <!-- NUMBERS -->
+    <div class="row">
+      <h4>Example with numbers:</h4>
+      <p>The answer to everything: {{ ((5 + 10 + 20) / 2) * 2 + 7 }}</p>
+      <p>If I am {{ age }} I can date people over {{ age / 2 + 7 }}</p>
+    </div>
+    <hr />
+    <div class="row">
+      <h4>Example with component methods:</h4>
+      <p>
+        My incredible value is <b>{{ getIncredibleValue() }}</b>
+      </p>
+      <p>
+        30 * 10 = <b>{{ getCalculatedValue(30) }}</b>
+      </p>
+      <p>
+        Angular is <b>{{ getParamValue(1) }}</b>
+      </p>
+    </div>
+
+    <!-- METHODS -->
+    <hr />
+    <div class="row">
+      <h4>Example with component methods:</h4>
+      <p>
+        My incredible value is <b>{{ getIncredibleValue() }}</b>
+      </p>
+      <p>
+        30 * 10 = <b>{{ getCalculatedValue(30) }}</b>
+      </p>
+      <p>
+        Angular is <b>{{ getParamValue(1) }}</b>
+      </p>
+    </div>
+
+    <!-- HTML properties -->
+    <hr />
+    <div class="row">
+      <h4>Example for HTML properties:</h4>
+      <img src="{{ imgsrc }}" alt="{{ imgAltDesc }}" />
+      <h1 [style.color]="'blue'">This is a Blue Heading</h1>
+    </div>
+  </div>
+</mat-card>
+
+<br />
+
+<mat-card>
+  <!-- DON'TS -->
+  <div class="row">
+    <h3>Don't render objects: {{ awesomeAdjectives }}</h3>
+    <small>unless youhave the property of the object to render {{ awesomeAdjectives[1] }}</small>
+    <!-- THE FOLLOWING WILL BREAK YOUR APPLICATION -->
+    <h3>
+      Don't do if blocks:
+      <!-- {{
+              if(val){return doSomething()}
+      }} -->
+    </h3>
+    <h3>
+      Don't do for blocks:
+      <!-- {{
+              for(let x; x>10; x++){
+                  return x
+              }
+
+      }}} -->
+    </h3>
+    <h3>
+      Don't create methods in template:
+      <!-- {{
+              doAnything(val){
+                  return val + 10
+              }
+      }} -->
+    </h3>
+  </div>
+</mat-card>

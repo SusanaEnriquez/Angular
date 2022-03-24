@@ -1,0 +1,39 @@
+<mat-card>
+  <div style="text-align:left">
+    <h2>Property Bind</h2>
+    <!-- SIMPLE PROPERTY BIND -->
+    <hr />
+    <div class="row">
+      <h4>Simple Property Bind:</h4>
+      <p [innerText]="simpleTestText"></p>
+    </div>
+
+    <!-- POPERTIES EXAMPLES -->
+    <hr />
+    <div class="row">
+      <h4>Different Properties Examples Bind:</h4>
+      <button [disabled]="isDisabled">Cancel</button>
+      <h4 [style.color]="headerColor" [title]="'Blue Heading'" [hidden]="isHeaderHidden" [innerHTML]="headingHTML">
+        <span>this html will be replaced</span>
+      </h4>
+      <img [src]="imgsrc" [style]="imgStyle" />
+    </div>
+
+    <!-- WITH METHODS -->
+    <hr />
+    <div class="row">
+      <h4>Bind Properties to Methods Or Evaluations:</h4>
+      <button [disabled]="sendStatus !== 'enabled'">Send</button>
+      <button [disabled]="cancelCount > 7">Cancel</button>
+      <button [disabled]="nextIsDisabled()">Next</button>
+    </div>
+
+    <!-- WITH METHODS -->
+    <hr />
+    <div class="row">
+      <h4>NgClass and Output():</h4>
+      <div [ngClass]="classes">[ngClass] binding to the classes property</div>
+      <app-counter [count]="counter"></app-counter>
+    </div>
+  </div>
+</mat-card>

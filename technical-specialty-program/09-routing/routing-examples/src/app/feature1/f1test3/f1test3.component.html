@@ -1,0 +1,10 @@
+<div fxLayout="column wrap" fxLayoutGap="40px">
+  <div  fxFlex>
+    <h1>{{ radData?.data?.somethingCool }}</h1>
+    <img mat-card-image src="{{radData?.data?.dogimgurl}}" class="card-gif" alt="GIF of great doggo" />
+    <br>
+    <small>{{radData?.data?.description}}</small>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <pre>{{ radData | json }}</pre>
+</div>

@@ -1,0 +1,19 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Router Params Test : {{ id }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+  <mat-card-actions>
+    <button [routerLink]="['child2']" [queryParams]="{ param1: testData[id].title, param2: testData[id].description }" mat-button>
+      Test Route Child 1
+    </button>
+    <button [routerLink]="['child3']" mat-button>Test Child Route 2</button>
+    <button (click)="goBack()" mat-button>Back</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- <button [routerLink]="['child2', { queryParams: { param1: testData[id].title, param2: testData[id].description } }]" mat-button>
+    Test Route Child 1
+  </button> -->

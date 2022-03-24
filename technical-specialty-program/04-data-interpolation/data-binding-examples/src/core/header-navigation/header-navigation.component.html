@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a (click)="changeExample(null)">Data Binding</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <li>
+        <a (click)="changeExample('stringInterpolation')">String Interpolation</a>
+      </li>
+      <li>
+        <a (click)="changeExample('propertyBinding')">Property Binding</a>
+      </li>
+      <li>
+        <a (click)="changeExample('eventBinding')">Event Binding</a>
+      </li>
+      <li>
+        <a (click)="changeExample('twoWayBinding')">Two Way Binding</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
